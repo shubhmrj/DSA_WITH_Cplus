@@ -169,7 +169,7 @@ int main(){
     arr2.A[1] = 20;     
     arr2.A[2] = 30; 
     arr2.A[3] = 40; 
-    arr2.A[4] = 50; 
+    arr2.A[4] = 60; 
     
     arr2.size = 10; // Set the maximum size of arr2
     
@@ -180,7 +180,7 @@ int main(){
     arr3.length = 0; 
     arr3.A = new int[arr3.size]; 
 
-    differencesorted(&arr1, &arr2, &arr3); 
+    arrayunion(&arr1, &arr2, &arr3); 
     cout << "The array is: ";
     display(arr3); 
 
