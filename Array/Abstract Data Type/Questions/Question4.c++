@@ -44,7 +44,8 @@ void Array ::display()
 //Function to find the missing one natural number in the array
 
 int Array::Missing(int sz) {
-    int total = (sz + 1) * (sz + 2) / 2; 
+    // int total = (sz + 1) * (sz + 2) / 2;
+    int total = (A[sz-1]*(A[sz-1] + 1)) / 2; 
     for (int i = 0; i < sz; i++) {
         total -= A[i]; 
     }
@@ -110,7 +111,7 @@ int main(){
 
     arr1->display(); 
 
-    cout<<arr1->n_missing_value(sz);
+    cout<<arr1->Missing(sz);
 
     
     return 0;
