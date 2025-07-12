@@ -65,21 +65,22 @@ void Array::insert(int index, int x)
 // find the repeated number and how many times in unsorted array
 
 void Array::unsorted(int sz){
-    int j=0;
-    for(int i = 0; i < sz ; i++){
+    for(int i = 0; i < sz-1 ; i++){
+        
+        int count=1;
 
-        if( A[i]==A[i+1]){
-            j=i+1;
-            while(A[j]==A[i]){
-                j++;
-        
+        if(A[i]!=-1){
+
+            for(int j= i+1;j<sz;j++){
+
+                if( A[i]==A[j]){
+                    count++;
+                    A[j]=-1;
+                } 
             }
-            cout<<A[i]<<" "<<"repeated times: "<<j-i;
-                cout<<endl;
-                i=j-1;
-        
-    }
-        
+            cout<<A[i]<<" count: "<<count;
+            cout<<endl;   
+        }  
     }
 }  
 
@@ -89,7 +90,6 @@ int main()
 {
     Array *arr1; // Default constructor
     int sz ,x;
-    int max=8;
     cout << "Enter the size of the array: ";
     cin >> sz;
     arr1 = new Array(sz); // Dynamic memory allocation for array

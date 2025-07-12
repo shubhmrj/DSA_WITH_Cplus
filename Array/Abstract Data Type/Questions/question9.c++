@@ -23,6 +23,7 @@ class Array
     void display();
     void insert(int index,int x);
     void unsorted(int sz);
+    Array* missing(Array &arr2,int sz);
 
 };
 
@@ -49,39 +50,41 @@ void Array::insert(int index, int x)
     }
 }
 
-// Array* Array::unsorted(int sz){
-//     int repeated=0;
-//     for(int i = 0; i < sz+1 ; i++){
+Array* Array::missing(Array &arr2,int sz){
+    int max= 0;
 
-//         if( A[i]==A[i+1] && A[i]!=repeated){
-//             cout<<A[i]<<" ";
-//             repeated=A[i];
+    for (int i = 0; i < length; i++) {
+        if (A[i] > max) max = A[i];
+    }
 
-//         }
+    for (int i = 0; i < sz; i++) {
+
+        if(arr2.A[10-A[i]]!=0){
+            cout<<"true";
+        }
+
+        arr2.A[A[i]]++;
+        }
         
-//     }
-// }  
+
+    return 0;
+}
 
 // find the repeated number and how many times in unsorted array
 
 void Array::unsorted(int sz){
-    int j=0;
-    for(int i = 0; i < sz ; i++){
+    for(int i = 0; i < sz-1 ; i++){
 
-        if( A[i]==A[i+1]){
-            j=i+1;
-            while(A[j]==A[i]){
-                j++;
-        
+            for(int j= i+1; j < sz; j++){
+
+                if( A[i] + A[j]==10){
+
+                    cout<<A[i] <<" + "<<A[j]<<" 10" ;
+                    cout<<endl;
+                } 
             }
-            cout<<A[i]<<" "<<"repeated times: "<<j-i;
-                cout<<endl;
-                i=j-1;
-        
     }
-        
-    }
-}  
+}   
 
 
 
@@ -89,17 +92,27 @@ int main()
 {
     Array *arr1; // Default constructor
     int sz ,x;
-    int max=8;
+    int max=0;
     cout << "Enter the size of the array: ";
     cin >> sz;
     arr1 = new Array(sz); // Dynamic memory allocation for array
 
     for (int i=0 ;i<sz;i++){
         cin>> x;
-        arr1->insert(i,x); 
+        arr1->insert(i,x);
+        if (x > max){ 
+        max = x;
+        } 
     }
     cout << "Array created successfully." << endl;
     arr1->display();
+
+    Array *arr2 ;
+    arr2 = new Array(max); 
+
+    for(int i = 0; i < max; i++) {
+        arr2->insert(i,0);
+    }
 
     
     

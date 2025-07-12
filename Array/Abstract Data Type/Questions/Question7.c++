@@ -54,6 +54,8 @@ void Array::insert(int index, int x)
     }
 }
 
+// Find the missing element and  it using hasing
+
 Array* Array::missing(Array &arr2,int sz){
     int max= 0;
 
@@ -80,14 +82,18 @@ int main()
 {
     Array *arr1; // Default constructor
     int sz ,x;
-    int max=8;
+    int max=0;
     cout << "Enter the size of the array: ";
     cin >> sz;
     arr1 = new Array(sz); // Dynamic memory allocation for array
 
     for (int i=0 ;i<sz;i++){
         cin>> x;
-        arr1->insert(i,x); 
+        arr1->insert(i,x);
+        
+        if (x > max){ 
+        max = x;
+        }
     }
     cout << "Array created successfully." << endl;
     arr1->display();
