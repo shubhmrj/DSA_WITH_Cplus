@@ -153,11 +153,11 @@ int main(){
     struct Array arr1;
     
     arr1.A = new int[5]; 
-    arr1.A[0] = 10;
-    arr1.A[1] = 20;  
-    arr1.A[2] = 30; 
-    arr1.A[3] = 40;
-    arr1.A[4] = 60; 
+    arr1.A[0] = 0;
+    // arr1.A[1] = 20;  
+    // arr1.A[2] = 30; 
+    // arr1.A[3] = 40;
+    // arr1.A[4] = 60; 
     
     arr1.size = 10; 
     
@@ -166,10 +166,10 @@ int main(){
     struct Array arr2;
     arr2.A=new int[5]; 
     arr2.A[0] = 15; 
-    arr2.A[1] = 20;     
-    arr2.A[2] = 30; 
-    arr2.A[3] = 40; 
-    arr2.A[4] = 60; 
+    // arr2.A[1] = 20;     
+    // arr2.A[2] = 30; 
+    // arr2.A[3] = 40; 
+    // arr2.A[4] = 60; 
     
     arr2.size = 10; // Set the maximum size of arr2
     
@@ -180,7 +180,7 @@ int main(){
     arr3.length = 0; 
     arr3.A = new int[arr3.size]; 
 
-    arrayunion(&arr1, &arr2, &arr3); 
+    arrayunion2(&arr1, &arr2, &arr3); 
     cout << "The array is: ";
     display(arr3); 
 
