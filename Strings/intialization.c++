@@ -10,6 +10,7 @@ int main() {
         s[i]=s[i]-32;
         cout<<s[i];
     }
+    
 
     cout << "\nlength : " << i;
     return 0;

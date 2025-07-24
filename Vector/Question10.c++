@@ -49,7 +49,7 @@ int main() {
 
 }
 
-// chatgpt
+// chatgpt technique gives another 
 class Solution {
 public:
     bool search(vector<int>& nums, int target) {

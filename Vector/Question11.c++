@@ -8,32 +8,36 @@ public:
         
         int l=0;
         int h=nums.size()-1;
-        int sh=90;
 
-        while (l <=h) {
-
-            int mid =(l + h)/2;
-                if (nums[l]<sh && nums[l]>nums[h]){
-                    sh=nums[h];
-                    h=mid-1;
+        while (l < h) {
+            int mid=(l+h)/2;
+            if(nums[h]<=nums[mid]){
+                if(nums[h]==nums[mid]){
+                    h--;
                 }
-                else {
-                    sh=nums[l];
-                    l=mid+1;
+                else if (nums[l]==nums[mid]){
+                    l++;
                 }
-             cout<<"sh: "<<sh;
-             cout<<endl;   
+                else{
+                l = mid + 1;
+            }
+                // cout<<"l: "<<l<<endl;
+            }
+            else{
+                h = mid;
+            }
+            
         }
     
-        return -1;
+        return nums[l];
     }
 };
 
 int main() {
-    vector<int> nums = {4,5,6,7,0,1,2};
+    vector<int> nums = {3, 3, 1, 3, 3, 3, 3};
 
     Solution sol;
 
-    sol.search(nums);
+    cout<<sol.search(nums);
 
 }
