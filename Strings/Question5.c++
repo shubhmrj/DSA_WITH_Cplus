@@ -11,7 +11,7 @@ void swap(char *x, char *y) {
 }
  
 int main(){
-    char str[]="madammm";
+    char str[]="AMA";
 
     int l=strlen(str);
     char reversed[50];
