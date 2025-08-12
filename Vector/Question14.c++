@@ -58,8 +58,7 @@ int main() {
     vector<int> numbers = {1, 5, 8, 3, 10};
     int target = 5;
 
-    vector<int>
-     output = max(numbers, target);
+    vector<int>output = max(numbers, target);
 
     for (int val : output) {
         cout << val << " ";

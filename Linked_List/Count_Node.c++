@@ -82,25 +82,40 @@ void Display(Node* head ) {
         cout << p->data << " -> ";
         Display(p->next);
     }
-    // cout<<endl;
 }
 
-void ReverseDisplay(Node* head) {
+// Count By Recursion
+int Recursion(Node* head) {
     Node* r = head;
-    if (r != NULL) {
-        ReverseDisplay(r->next);
-        cout << r->data << " -> ";
+    if (r ==0){
+        return 0;
+    } 
+    else {
+        return Recursion(r->next) + 1;
     }
 }
 
+// Count through iteration
+void Iteration(Node* head ) {
+    Node* i = head;
+    int count=0;
+    while (i != 0) {
+        count ++;
+        i=i->next;
+    }
+    cout<<"Iterative count: "<<count;
+}
+
 int main() {
-    int A[] = {3, 5, 7, 10, 15};
+    int A[] = {3, 5, 7, 10, 15 ,16 , 17};
     int n = sizeof(A) / sizeof(A[0]);
 
     Node* head = create(A, n);
 
     Display(head);
-    ReverseDisplay(head);
+    cout<<endl<<"Total Number of Element is : ";
+    cout<<Recursion(head);
+    Iteration(head);
 
     return 0;
 }

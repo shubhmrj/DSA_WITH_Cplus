@@ -11,8 +11,7 @@ public:
         int h=nums.size()-1;
         while (l <=h) {
 
-        int mid =(l + h)/2
-        ;
+        int mid =(l + h)/2;
         if (target==nums[mid]){
             result.push_back(mid); 
         }
