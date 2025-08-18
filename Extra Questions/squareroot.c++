@@ -2,14 +2,15 @@
 #include<vector>
 using namespace std;
 
-int binarysearch(int x){
+long long int binarysearch(int x){
     int l=0;
     int h=x;
-    int ans = 0;
+    long long int  ans = 0;
     
     while (l <= h) {
-    int mid =l+(h-l)/2;
-    long long sq = 1LL * mid * mid;
+    long long int mid =l+(h-l)/2;
+    
+    long long int sq =  mid * mid;
     if (sq == x) return mid;
     else if (sq < x) {
         ans = mid;  // store last mid that was valid
@@ -22,7 +23,7 @@ int binarysearch(int x){
 }
 
 int main(){
-    int x=8;
+    int x=630;
     cout<<binarysearch(x);
     
 }
