@@ -35,7 +35,7 @@ public:
 
 
 int main() {
-    vector<int> arr = {3, 11, 3,5,6,7,12, 4, 2 , 5,3};
+    vector<int> arr = {3, 11, 3,5,6,7,12,11,11 ,4, 2 , 5,3};
     Solution sol;
     cout<<sol.increasingTriplet(arr);
     // for(int i = 0; i<res.size();i++){
