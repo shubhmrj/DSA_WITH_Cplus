@@ -10,7 +10,7 @@ int main (){
     while(n!=0){
         string bit = to_string(n%10);
         if(bit=="0"){
-            res= res+"1";
+            res= res + "1";
         }
         else{
             res = res + "0";
