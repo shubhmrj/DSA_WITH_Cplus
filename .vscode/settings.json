@@ -101,6 +101,10 @@
     "typeinfo": "cpp",
     "list": "cpp",
     "map": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "bitset": "cpp",
+    "chrono": "cpp",
+    "valarray": "cpp",
+    "typeindex": "cpp"
   }
 }
