@@ -29,6 +29,6 @@ int main() {
     Solution sol;
     cout<<sol.power(2,8);
     
-   
+    cout<<endl;
     return 0;
 }
