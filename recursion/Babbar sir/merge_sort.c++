@@ -1,70 +1,64 @@
 #include<iostream>
 using namespace std;
 
+
 class Solution {
-public:
-
+    public:
     void merge(int *arr, int s, int e){
-
         int mid = (s+e)/2;
 
-        int len1= mid-s+1;
-        int len2= e-mid;
+        int len1= mid -s+1;
+        int len2 = e-mid;
 
-        int *first = new int [len1];
-        int *second = new int [len2];
+        int *first = new int[len1];
+        int *second = new int[len2];
 
-        int mainArrayIndex = s;
-        for(int i=0; i<len1; i++) {
-        first[i] = arr[mainArrayIndex++];
+        int mainarr = s;
+        for(int i=0; i<len1;i++){
+            first[i]=arr[mainarr++];
         }
 
-        mainArrayIndex = mid+1;
-        for(int i=0; i<len2; i++) {
-        second[i] = arr[mainArrayIndex++];
+        mainarr = mid+1;
+        for(int i=0; i<len2;i++){
+            second[i]=arr[mainarr++];
         }
 
-    //merge 2 sorted arrays     
-    int index1 = 0;
-    int index2 = 0;
-    mainArrayIndex = s;
+        int index1=0;
+        int index2=0;
+        mainarr=s;
 
-    while(index1 < len1 && index2 < len2) {
-        if(first[index1] < second[index2]) {
-            arr[mainArrayIndex++] = first[index1++];
+        while(index1<len1 && index2<len2){
+            if(first[index1]<second[index2]){
+                arr[mainarr++]= first[index1++];
+            }
+            else{
+                arr[mainarr++]= second[index2++];
+            }
         }
-        else{
-            arr[mainArrayIndex++] = second[index2++];
+        while(index1<len1){
+            arr[mainarr++]= first[index1++];
         }
-    }   
 
-    while(index1 < len1) {
-        arr[mainArrayIndex++] = first[index1++];
-    }
+        while(index2<len2){
+            arr[mainarr++]= second[index2++];
+        }
 
-    while(index2 < len2 ) {
-        arr[mainArrayIndex++] = second[index2++];
-    }
-
-    delete []first;
-    delete []second;
+        delete []first;
+        delete []second;
 
     }
-    void mergesort(int *nums ,int s, int e ) {
+    void mergesort(int *arr, int s, int e){
         if(s>=e){
             return;
         }
         int mid = (s+e)/2;
 
-        mergesort(nums,s,mid);
-                
-        mergesort(nums,mid+1,e);
+        mergesort(arr, s,mid);
+        mergesort(arr,mid+1,e);
 
-        merge(nums,s,e);
-
+        merge(arr,s,e);
     }
 };
-
 
 int main() {
     int arr[8] = {80, 11, 3,5,25,5,2,6};
