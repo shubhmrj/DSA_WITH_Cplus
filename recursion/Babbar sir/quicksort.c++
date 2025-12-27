@@ -1,7 +1,7 @@
 
 /*
                 ┌──────────────────┐
-                │    Array A        │
+                │    numsay A        │
                 │ [10, 4, 8, 3, 1]  │
                 └──────────────────┘
                           │
@@ -52,51 +52,53 @@ using namespace std;
 
 
 
+
+
 class Solution{
     public:
-        int quicks(vector<int> &nums,int s, int e){
+
+        int quick(vector<int> &nums, int s, int e){
             int pivot = nums[s];
-            int cnt = 0;
-            for(int i = s+1; i<=e; i++) {
-                if(nums[i] <=pivot) {
+            int cnt =0;
+
+            for(int i=s+1;i<=e;i++){
+                if(nums[i]<pivot){
                     cnt++;
                 }
             }
-
-            int pivotIndex = s + cnt;
             
-            swap(nums[pivotIndex],nums[s]);
+            int pivotindex= s+cnt;
+            swap(nums[s],nums[pivotindex]);
 
             int i =s;
-            int j= e;
+            int j = e;
 
-            while(i<pivotIndex && j>pivotIndex){
-                while(nums[i]<=pivot){
+            while(i<pivotindex && j>pivotindex){
+                while(nums[i]<pivot){
                     i++;
                 }
-
                 while(nums[j]>pivot){
                     j--;
                 }
 
-                if(i < pivotIndex && j > pivotIndex) {
-                    swap(nums[i++], nums[j--]);
-                }            
+                if(i<pivotindex && j>pivotindex){
+                    swap(nums[i],nums[j]);
+                }
+
             }
-            return pivotIndex;
+            return pivotindex;
         }
+        void quicksort(vector<int> &nums, int s, int e){
+            if(s>=e) return;
 
-        void quicksort(vector<int> &nums,int s, int e){
-            if(s>=e){
-                return;
-            }
-
-            int p = quicks(nums,s,e);
+            int p=quick(nums,s,e);
 
             quicksort(nums,s,p-1);
             quicksort(nums,p+1,e);
         }
+
 };
+
 
 int main(){
     vector<int> nums = {30,12,25,12,35,1,5,6,5,8,8,10};
