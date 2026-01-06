@@ -6,10 +6,10 @@ int factorial(long long n){
         return 1;
     }
 
-    return n*factorial(n-1);
+    return n * factorial(n-1);
 
 }
 
 int main(){
-    cout<<factorial(15);
+    cout<<factorial(4);
 }
