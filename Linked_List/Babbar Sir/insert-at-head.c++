@@ -39,5 +39,11 @@ int main(){
 
     insetathead(head,25);
     print(head);
+
+    cout<<endl;
+    for(int i =0; i<10;i++){
+        insetathead(head,i);
+    }
+    print(head);
     return 0;
 }
