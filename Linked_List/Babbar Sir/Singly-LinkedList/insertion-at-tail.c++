@@ -45,5 +45,7 @@ int main(){
         insert_at_tail(tail,i);
     }
     print(head);
+
+    
     return 0;
 }
