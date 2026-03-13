@@ -70,7 +70,47 @@ void insert_at_middle(Node* &tail,Node* &head,int d, int pos){
     temp -> next = newnode;
 }
 
+void Delete_data(int po, Node* &head){
+    
+    Node* value = head;
+
+    int pos = 1;
+
+    while(po != value -> data){
+        value = value -> next;
+        pos++;
+    }
+
+    if (pos == 1){
+        Node* temp = head;
+        head = head ->next;
+
+        temp -> next = NULL;
+
+        delete temp;
+    }
+
+    else{
+
+        int count = 1;
+        Node* curr = head;
+        Node* prev = NULL;
+
+        while(count<pos){
+            prev = curr;
+            curr = curr -> next;
+            count++;
+        }
+
+        prev -> next = curr -> next;
+        curr -> next  = NULL;
+        delete curr;
+        
+    }
+}
+
 void Delete(int pos, Node* &head){
+    
     
     if (pos == 1){
         Node* temp = head;
@@ -102,7 +142,7 @@ void Delete(int pos, Node* &head){
 
 int main(){
 
-    Node* newnode1 = new Node(10);
+    Node* newnode1 = new Node(2);
 
     Node* head = newnode1;
     Node* tail = newnode1;
@@ -122,7 +162,7 @@ int main(){
     insert_at_middle(tail,head,58,13);
     print(head);
 
-    Delete(2,head);
+    Delete_data(2,head);
 
     print(head);
 }
