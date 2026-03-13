@@ -70,6 +70,18 @@ void insert_at_middle(Node* &tail,Node* &head,int d, int pos){
     temp -> next = newnode;
 }
 
+void Delete(int pos, Node* &head){
+    
+    if (pos == 1){
+        Node* temp = head;
+        head = head ->next;
+
+        temp = temp ->next;
+
+        delete temp;
+    }
+}
+
 int main(){
 
     Node* newnode1 = new Node(10);
@@ -91,4 +103,6 @@ int main(){
 
     insert_at_middle(tail,head,58,13);
     print(head);
+
+    Delete(1,head);
 }
