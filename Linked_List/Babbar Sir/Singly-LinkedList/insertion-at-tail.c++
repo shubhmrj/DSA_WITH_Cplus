@@ -18,6 +18,7 @@ void insert_at_tail(Node* &tail,int d){
 
     tail ->next = temp;
     tail = tail-> next;
+    
 }
 
 void print(Node* & head){

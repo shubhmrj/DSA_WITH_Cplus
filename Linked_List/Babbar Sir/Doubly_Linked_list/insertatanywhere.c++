@@ -19,6 +19,7 @@ void insert_at_head(Node* &head,int d){
     Node* temp = new Node(d);
 
     temp -> next = head;
+    head -> prev = temp;
     temp -> prev = NULL;
     head = temp;
 }
@@ -27,9 +28,7 @@ void insert_at_tail(Node* &tail,int d){
     Node* temp = new Node(d);
 
     tail ->next =  temp;
-    temp  -> prev = tail;
     temp -> next = NULL;
-
     tail = temp;
 }
 void print(Node* &head){
