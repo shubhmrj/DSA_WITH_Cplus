@@ -19,7 +19,7 @@ void insert_at_head(Node* &head,int d){
     Node* temp = new Node(d);
 
     temp -> next = head;
-    temp -> prev = NULL;
+    head -> prev = temp;
     head = temp;
 }
 
