@@ -63,6 +63,7 @@ void insert_at_middle(Node* &tail,Node* &head,int d, int pos){
         insert_at_tail(tail,d);
         return;
     }
+    
     Node* newnode = new Node(d);
 
     newnode -> next = temp ->next;

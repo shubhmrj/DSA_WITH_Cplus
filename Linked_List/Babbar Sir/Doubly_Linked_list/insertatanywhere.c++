@@ -15,7 +15,14 @@ class Node{
     }
 };
 
-void insert_at_head(Node* &head,int d){
+void insert_at_head(Node* &head,Node* &tail,int d){
+    
+    if (head == NULL){
+        Node* temp = new Node(d);
+        head = temp;
+        tail = temp;
+
+    }
     Node* temp = new Node(d);
 
     temp -> next = head;
@@ -23,14 +30,53 @@ void insert_at_head(Node* &head,int d){
     head = temp;
 }
 
-void insert_at_tail(Node* &tail,int d){
-    Node* temp = new Node(d);
+void insert_at_tail(Node* &tail,Node* &head,int d){
 
-    tail ->next =  temp;
-    temp  -> prev = tail;
-    temp -> next = NULL;
 
-    tail = temp;
+     if (tail == NULL){
+        Node* temp = new Node(d);
+        tail = temp;
+        head = temp;
+
+    }
+    else{
+        Node* temp = new Node(d);
+
+        tail ->next =  temp;
+        temp  -> prev = tail;
+        temp -> next = NULL;
+
+        tail = temp;
+    }
+}
+
+void insert_at_anypos(Node* &head, Node* &tail,int d,int pos){
+    if(pos ==1){
+        insert_at_head(head,tail,d);
+        return;
+    }
+
+    Node* temp = head;
+
+    int count =1;
+    while(count < pos-1){
+        temp = temp ->next;
+        count++;
+    }
+
+    if(temp -> next == NULL){
+        insert_at_tail(tail,head,d);
+        return;
+    }
+
+    Node* newnode = new Node(d);
+
+    newnode -> next = temp -> next;
+    temp ->next ->prev = newnode;
+    newnode -> prev = temp;
+
+    temp -> next = newnode;
+
 }
 void print(Node* &head){
     Node* temp = head;
@@ -43,20 +89,23 @@ void print(Node* &head){
 }
 
 int main(){
-    Node* node1 = new Node(10);
+    // Node* node1 = new Node(10);
 
-    Node* head = node1;
-    Node* tail = node1;
-    // print(head);
+    Node* head = NULL;
+    Node* tail = NULL;
+    print(head);
 
-    insert_at_head(head,25);
+    insert_at_head(head,tail,25);
     print(head);
     
 
     cout<<endl;
     for(int i =0; i<10;i++){
-        insert_at_tail(tail,i);
+        insert_at_tail(tail,head,i);
     }
+    print(head);
+
+    insert_at_anypos(head,tail,10,3);
     print(head);
     return 0;
 }
