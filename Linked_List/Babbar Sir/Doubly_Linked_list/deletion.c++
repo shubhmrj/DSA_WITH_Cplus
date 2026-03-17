@@ -15,7 +15,16 @@ class Node{
     }
 
     ~Node(){
-        cout<<"desturctor called"<<endl;
+
+        cout<<"Desturctor called :- "<<endl;
+
+        int val = this -> data;
+        if(next !=NULL){
+            delete next;
+            next = NULL;
+        }
+
+        cout<<"memory free for node with data : "<<val<<endl;
     }
 };
 
