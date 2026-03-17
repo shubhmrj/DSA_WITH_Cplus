@@ -124,6 +124,7 @@ void Delete(Node* &head,int pos){
             count++;
         }
 
+        temp -> prev =  NULL;
         prev -> next = temp -> next;
 
         temp -> next  = NULL;
@@ -152,7 +153,7 @@ int main(){
     insert_at_anypos(head,tail,10,3);
     print(head);
 
-    Delete(head,1);
+    Delete(head,13);
     print(head);
     return 0;
 
