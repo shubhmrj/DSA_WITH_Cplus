@@ -14,13 +14,13 @@ class Node{
 
 };
 
-void insert(Node* &tail, int data, int element){
+void insertion_cll(Node* &tail, int data, int element){
 
     if(tail == NULL){
-        Node* insert_node = new Node(data);
-        tail = insert_node;
+        Node* insert_in_tail= new Node(data);
+        tail = insert_in_tail;
 
-        insert_node ->next = tail;
+        insert_in_tail ->next = tail;
     }
 
     else{
@@ -39,7 +39,7 @@ void insert(Node* &tail, int data, int element){
     }
 }
 
-void print (Node* tail){
+void print (Node* &tail){
     Node* temp = tail;
 
     if(tail == NULL){
@@ -55,7 +55,16 @@ void print (Node* tail){
 }
 
 int main(){
-    Node* node1 = new Node(10);
-    Node* tail = node1;
+    // Node* node1 = new Node(10);
+    Node* tail = NULL;
+    
+    print(tail);
+
+    insertion_cll(tail,3,10);
+    print(tail);
+
+    for(int i = 0; i < 10; i++){
+        insertion_cll(tail,i,10);
+    }
     print(tail);
 }
