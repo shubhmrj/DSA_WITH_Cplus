@@ -7,8 +7,8 @@ class Node{
         int data;
         Node* next;
 
-    Node(int data){
-        this -> data = data;
+    Node(int d){
+        this -> data = d;
         this -> next = NULL;
     }
 
@@ -17,40 +17,50 @@ class Node{
 void insertion_cll(Node* &tail, int data, int element){
 
     if(tail == NULL){
-        Node* insert_in_tail= new Node(data);
-        tail = insert_in_tail;
+        Node* new_node= new Node(data);
+        tail = new_node;
 
-        insert_in_tail ->next = tail;
+        new_node -> next = new_node;
     }
 
     else{
         Node* curr = tail;
-
+        
         while(curr->data != element) {
             curr = curr -> next;
         }
+        
+        if(curr->data == element){
 
-        Node* temp = new Node(data);
+            Node* temp = new Node(data);
 
-        temp -> next = curr ->next;
-        curr -> next = temp;
+            temp -> next = curr ->next;
+            curr -> next = temp;
 
+        }
 
+        else{
+            return;
+            cout<<" Element not found : ";
+        }
+
+        return;
     }
 }
 
-void print (Node* &tail){
+void print (Node* tail){
     Node* temp = tail;
 
     if(tail == NULL){
         cout<<"List is empty"<<endl;
+        return;
     }
 
     do{
-        cout<<tail -> data<<" ";
+        cout << tail -> data << " ";
         tail = tail -> next;
-    }
-    while(tail != temp);
+    }while(tail != temp);
+
     cout<<endl;
 }
 
@@ -58,13 +68,16 @@ int main(){
     // Node* node1 = new Node(10);
     Node* tail = NULL;
     
-    print(tail);
+    // print(tail);
 
     insertion_cll(tail,3,10);
-    print(tail);
+    print(tail); 
 
     for(int i = 0; i < 10; i++){
-        insertion_cll(tail,i,10);
+        insertion_cll(tail,i,3);
     }
     print(tail);
+
+    insertion_cll(tail,5,20);
+
 }
