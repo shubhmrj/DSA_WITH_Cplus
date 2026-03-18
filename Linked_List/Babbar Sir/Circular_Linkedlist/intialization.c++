@@ -26,25 +26,29 @@ void insertion_cll(Node* &tail, int data, int element){
     else{
         Node* curr = tail;
         
-        while(curr->data != element) {
+        while(curr != tail) {
             curr = curr -> next;
         }
+
+        Node* temp = new Node(data);
+
+        temp -> next = curr ->next;
+        curr -> next = temp;
         
-        if(curr->data == element){
+        // if(curr->data == element){
 
-            Node* temp = new Node(data);
+        //     Node* temp = new Node(data);
 
-            temp -> next = curr ->next;
-            curr -> next = temp;
+        //     temp -> next = curr ->next;
+        //     curr -> next = temp;
 
-        }
+        // }
 
-        else{
-            return;
-            cout<<" Element not found : ";
-        }
+        // else{
+        //     cout<<" Element not found : ";
+        // }
 
-        return;
+    
     }
 }
 
@@ -57,8 +61,8 @@ void print (Node* tail){
     }
 
     do{
-        cout << tail -> data << " ";
-        tail = tail -> next;
+        cout << temp -> data << " ";
+        temp = temp -> next;
     }while(tail != temp);
 
     cout<<endl;
@@ -79,5 +83,9 @@ int main(){
     print(tail);
 
     insertion_cll(tail,5,20);
+
+    print(tail);
+
+    cout<<"tail: "<<tail -> data;
 
 }
