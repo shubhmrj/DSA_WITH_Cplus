@@ -101,6 +101,25 @@ void Delete(int pos, Node* &head){
     }
 }
 
+
+Node* reverseList(Node* &head, Node* &tail) {
+    Node* prev = NULL;
+    Node* curr = head;
+
+    // old head becomes new tail
+    tail = head;
+
+    while(curr != NULL){
+        Node* nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode; 
+    }
+
+    head = prev;
+    return head;
+}
+
 int main(){
 
     Node* newnode1 = new Node(10);
@@ -124,6 +143,10 @@ int main(){
     print(head);
 
     Delete(2,head);
+
+    print(head);
+
+    reverseList(head,tail);
 
     print(head);
 }
