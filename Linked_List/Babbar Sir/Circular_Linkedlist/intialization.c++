@@ -80,6 +80,7 @@ int main(){
     for(int i = 0; i < 10; i++){
         insertion_cll(tail,i,3);
     }
+    
     print(tail);
 
     insertion_cll(tail,5,20);
