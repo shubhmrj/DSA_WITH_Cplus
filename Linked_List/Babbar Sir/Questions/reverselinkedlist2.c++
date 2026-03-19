@@ -127,45 +127,35 @@ Node* reverseBetween(Node* head, int left, int right) {
         }
 
         Node* prevLeft = NULL;
-        Node* leftpos = head;
+        Node* curr = head;
 
-        int count = 1;
-        while(count < left){
-            prevLeft = leftpos;
-            leftpos = leftpos -> next;
-            count++;
+        for (int i = 1; i < left; i++) {
+            prevLeft = curr;
+            curr = curr->next;
         }
-
-        
-
-        Node* rightpos = leftpos;
-
-        for (int i = left; i < right; i++) {
-            rightpos = rightpos->next;
-        }
-
-        // Node* afterrightpos = rightpos -> next;
+  
 
         Node* prev = NULL;
-        Node* curr = leftpos;
+        Node* leftNode = curr;
 
-        while(curr != rightpos){
-            
+       
+
+        for (int i = left; i <= right; i++) {
             Node* nextNode = curr->next;
             curr->next = prev;
             prev = curr;
-            curr = nextNode; 
+            curr = nextNode;
         }
 
         if (prevLeft != NULL) {
             prevLeft->next = prev;
-            } 
+        } 
 
         else {
             head = prev;
         }
 
-        leftpos -> next = rightpos;
+        leftNode -> next = curr;
         
         return head;
     }
@@ -201,7 +191,8 @@ int main(){
 
     print(head);
 
-    reverseBetween(head,2,6);
-
+    head = reverseBetween(head,1,8);
     print(head);
+
+    cout<< 5/2<<endl;
 }
