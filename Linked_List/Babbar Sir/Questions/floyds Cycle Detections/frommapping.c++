@@ -57,6 +57,7 @@ bool iscircular(Node* &head){
     while(temp != NULL){
 
         if( circular[temp] == true){
+            cout<< "Cycle Started at : "<< temp-> data<<endl;
             return true;
         }
 
@@ -88,6 +89,7 @@ int main(){
     print(head);
 
     tail ->next = head -> next;
+
     
     cout<<iscircular(head);
 
