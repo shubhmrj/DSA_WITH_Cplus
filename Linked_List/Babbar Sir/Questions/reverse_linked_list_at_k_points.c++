@@ -62,8 +62,9 @@ Node* reverseList(Node* &head,int k) {
 
 
     Node* curr = head;
+    int loop = count/k;
 
-    while (curr != NULL) {
+    while (loop !=0) {
 
         Node* first = curr;
         Node* prev = NULL;
@@ -90,7 +91,7 @@ Node* reverseList(Node* &head,int k) {
         
         first-> next = curr;
         prevGroupTail = first;
-
+        loop--;
 
     }
     head = newHead;
@@ -138,16 +139,16 @@ int main(){
     print(head);
 
     cout<<endl;
-    for(int i =0; i<8;i++){
+    for(int i =0; i<3;i++){
         insert_at_tail(tail,i);
     }
     
 
     print(head);
 
-    // head = reverseList(head,3);
+    head = reverseList(head,3);
 
-    head = recursion_rev(head,3);
+    // head = recursion_rev(head,3);
 
     print(head);
 
