@@ -34,7 +34,7 @@ void print(Node* &head){
 }
 
 int main(){
-    Node* node1 = new Node(10);
+    Node* node1 = new Node(1);
 
     Node* head = node1;
     // print(head);
@@ -43,7 +43,7 @@ int main(){
     print(head);
 
     cout<<endl;
-    for(int i =0; i<10;i++){
+    for(int i =2; i<10;i++){
         insertathead(head,i);
     }
     print(head);
