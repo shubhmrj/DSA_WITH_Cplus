@@ -111,7 +111,7 @@ int main(){
 
     circular_linked_list(tail,3);
 
-    for(int i = 0; i < 12; i++){
+    for(int i = 0; i < 10; i++){
         circular_linked_list(tail,i);
     }
     
