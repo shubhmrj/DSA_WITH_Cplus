@@ -20,6 +20,8 @@ int gcd(int a ,int b){
     return a;
 }
 
+
+
 int main(){
- cout<<gcd(0,3);
+ cout<<gcd(4,2);
 }

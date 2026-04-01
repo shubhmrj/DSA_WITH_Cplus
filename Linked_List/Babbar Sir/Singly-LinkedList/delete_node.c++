@@ -109,7 +109,7 @@ void Delete_data(int po, Node* &head){
     }
 }
 
-void Delete(int pos, Node* &head){
+Node* Delete(int pos, Node* &head){
     
     
     if (pos == 1){
@@ -136,8 +136,10 @@ void Delete(int pos, Node* &head){
         prev -> next = curr -> next;
         curr -> next  = NULL;
         delete curr;
+
         
     }
+    return head;
 }
 
 int main(){
@@ -152,15 +154,15 @@ int main(){
     insert_at_tail(tail,25);
     print(head);
 
-    cout<<endl;
-    for(int i =0; i<10;i++){
-        insert_at_tail(tail,i);
-    }
-    print(head);
-    print(head);
+    // cout<<endl;
+    // for(int i =0; i<10;i++){
+    //     insert_at_tail(tail,i);
+    // }
+    // print(head);
+    // print(head);
 
-    insert_at_middle(tail,head,58,13);
-    print(head);
+    // insert_at_middle(tail,head,58,13);
+    // print(head);
 
     Delete_data(2,head);
 

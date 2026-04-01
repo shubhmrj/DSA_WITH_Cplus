@@ -10,10 +10,6 @@ public:
         int j = s.length() - 1;
 
         while (i < j) {
-            // Skip non-alphanumeric from the front
-            while (i < j && !isalnum(s[i])) i++;
-            // Skip non-alphanumeric from the back
-            while (i < j && !isalnum(s[j])) j--;
 
             // Compare lowercase versions
             if (tolower(s[i]) != tolower(s[j])) return false;
@@ -27,7 +23,7 @@ public:
 };
 
 int main() {
-    string s = "aba";
+    string s = "abba";
     Solution sol;
-    cout << boolalpha << sol.isPalindrome(s) << endl;  // Output: here boolalpha print true w/o alpha print false
+    cout << sol.isPalindrome(s) << endl;  // Output: here boolalpha print true w/o alpha print false
 }
