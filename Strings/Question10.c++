@@ -33,7 +33,7 @@ public:
 };
 
 int main() {
-    string s = "abca";
+    string s = "abba";
     Solution sol;
     cout<<boolalpha<<sol.validPalindrome(s);
 }
