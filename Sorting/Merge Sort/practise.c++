@@ -22,7 +22,7 @@ class Solution {
             while(i <= mid) temp.push_back(nums[i++]);
             while(j <= e) temp.push_back(nums[j++]);
 
-             for(int k = 0; k < temp.size(); k++){
+            for(int k = 0; k < temp.size(); k++){
                 nums[s + k] = temp[k];
             }
         }
