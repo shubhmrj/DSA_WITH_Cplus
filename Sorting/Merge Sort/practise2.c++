@@ -1,45 +1,49 @@
 #include<iostream>
 #include<vector>
+
 using namespace std;
 
-class Solution {
+class Solution{
     public:
-
         void merge(vector<int> &nums, int s, int mid, int e){
-            int i =s;
-            int j = mid +1;
+            int i = s;
+            int j = mid+1;
+
             vector<int> temp;
 
-            while(i<=mid && j<=e){
-                if(nums[i]< nums[j]){
+            while(i <= mid && j <= e){
+                if(nums[i] < nums[j]){
                     temp.push_back(nums[i++]);
                 }
-                else
-                    temp.push_back(nums[j++]);
+                else{
+                    temp.push_back(nums[j++]);                   
+                }
             }
-            
-
-            while(i <= mid) temp.push_back(nums[i++]);
-            while(j <= e) temp.push_back(nums[j++]);
+            while(i <= mid){
+                temp.push_back(nums[i++]);
+            }
+            while(j <= e){
+                temp.push_back(nums[j++]);
+            }
 
             for(int k = 0; k < temp.size(); k++){
-                nums[s + k] = temp[k];
+                nums[s +k] = temp[k];
             }
+
         }
 
-        void mergesort(vector<int> &nums,int s, int e){
+        void mergesort(vector<int> &nums, int s, int e){
 
-            if(s>=e){
+            if(s >= e){
                 return;
             }
 
             int mid = s + (e-s)/2;
 
-            mergesort(nums,s,mid);
+            mergesort(nums,s, mid);
             mergesort(nums,mid+1,e);
 
             merge(nums,s,mid,e);
-
         }
 };
 
