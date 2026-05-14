@@ -4,18 +4,20 @@ using namespace std;
 int s=0;
 int fib(int n){
     
-    if (n==1)
-        cout<< 1;
+    if (n <= 1)
+        return n;
 
-    fib(n-1);
-    s=s+n;
-    cout<<s;  
+    return fib(n-1) + fib(n-2);
+
+    
+        
 }
 
 int main(){
-    int p;
-    fib(2);
-    // cout<<p;
-    return 0;
+int n = 10;
+
+    for (int i = 0; i < n; i++) {
+        cout << fib(i) << " ";
+    }    return 0;
     
 }

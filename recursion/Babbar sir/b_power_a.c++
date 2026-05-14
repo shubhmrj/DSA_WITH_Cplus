@@ -27,7 +27,7 @@ public:
 
 int main() {
     Solution sol;
-    cout<<sol.power(2,8);
+    cout<<sol.power(2,2);
     
     cout<<endl;
     return 0;
