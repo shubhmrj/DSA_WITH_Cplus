@@ -41,12 +41,11 @@ int main(){
     for(int i = 0; i < nums1.size(); i++){
         cout<<"{" << " ";
         for(int j = 0; j <nums1[0].size(); j++){
-            cout<< nums1[1]<< " ";
+            cout<< nums1[j][i]<< " ";
         }
         cout<<"}";
         cout<<endl;
     }
-    cout<<nums[0];
 
     return 0;
 }
