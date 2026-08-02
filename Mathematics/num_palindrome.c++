@@ -18,6 +18,7 @@ class Solution{
 
             return k == j;
         }
+        
 };
 
 int main(){
@@ -26,6 +27,5 @@ int main(){
     Solution sol;
 
     cout<<    sol.num(n) << endl;
-
 
 }
